@@ -1,15 +1,18 @@
 # TODO
-# - deps: requires plug-in "org.eclipse.wst.sse.core".
-# - test package, how to (where to?) package web and xml and index.html
+# - how to (where to?) package web and xml and index.html
+%include	/usr/lib/rpm/macros.java
 Summary:	ADT Plugin for Eclipse
 Name:		eclipse-plugin-adt
 Version:	0.9.9
-Release:	0.1
+Release:	0.4
 License:	EPL v1.0
 Group:		Libraries/Java
 Source0:	http://dl.google.com/android/ADT-%{version}.zip
 # Source0-md5:	7deff0c9b25940a74cea7a0815a3bc36
 URL:		http://developer.android.com/sdk/eclipse-adt.html
+BuildRequires:	jpackage-utils
+BuildRequires:	rpm-javaprov
+BuildRequires:	rpmbuild(macros) >= 1.300
 BuildRequires:	unzip
 Requires:	eclipse >= 3.3
 Requires:	eclipse-gef
@@ -27,6 +30,12 @@ build Android applications.
 
 %prep
 %setup -qc
+find -name '*.jar' | while read jar; do
+	dir=${jar%.jar}
+	install -d $dir
+	%{__unzip} -qq $jar -d $dir
+	rm $jar
+done
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -39,5 +48,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{eclipsedir}/features/com.android.ide.eclipse.*.jar
-%{eclipsedir}/plugins/com.android.ide.eclipse.*.jar
+%{eclipsedir}/features/com.android.ide.eclipse.*
+%{eclipsedir}/plugins/com.android.ide.eclipse.*
