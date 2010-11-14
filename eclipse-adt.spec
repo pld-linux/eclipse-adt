@@ -6,12 +6,15 @@ Name:		eclipse-plugin-adt
 Version:	0.9.9
 Release:	0.1
 License:	EPL v1.0
-Group:		Development/Tools
+Group:		Libraries/Java
 Source0:	http://dl.google.com/android/ADT-%{version}.zip
 # Source0-md5:	7deff0c9b25940a74cea7a0815a3bc36
 URL:		http://developer.android.com/sdk/eclipse-adt.html
 BuildRequires:	unzip
 Requires:	eclipse >= 3.3
+Requires:	eclipse-gef
+Requires:	eclipse-jdt
+Requires:	eclipse-plugin-webtools
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -23,7 +26,7 @@ is designed to give you a powerful, integrated environment in which to
 build Android applications.
 
 %prep
-%setup -q -c
+%setup -qc
 
 %install
 rm -rf $RPM_BUILD_ROOT
