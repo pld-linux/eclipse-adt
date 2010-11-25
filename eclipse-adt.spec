@@ -2,11 +2,12 @@
 # - how to (where to?) package web and xml and index.html
 %include	/usr/lib/rpm/macros.java
 Summary:	ADT Plugin for Eclipse
-Name:		eclipse-plugin-adt
+Name:		eclipse-adt
 Version:	0.9.9
-Release:	0.4
+Release:	1
 License:	EPL v1.0
 Group:		Libraries/Java
+Obsoletes:	eclipse-plugin-adt
 Source0:	http://dl.google.com/android/ADT-%{version}.zip
 # Source0-md5:	7deff0c9b25940a74cea7a0815a3bc36
 URL:		http://developer.android.com/sdk/eclipse-adt.html
