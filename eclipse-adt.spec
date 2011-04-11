@@ -4,7 +4,7 @@
 Summary:	ADT Plugin for Eclipse
 Name:		eclipse-adt
 Version:	10.0.0
-Release:	3
+Release:	4
 License:	EPL v1.0
 Group:		Libraries/Java
 Obsoletes:	eclipse-plugin-adt
@@ -19,7 +19,6 @@ Requires:	eclipse >= 3.6
 Requires:	eclipse-gef
 Requires:	eclipse-jdt
 Requires:	eclipse-plugin-webtools
-BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		eclipsedir	%{_libdir}/eclipse/dropins/adt
