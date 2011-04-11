@@ -4,7 +4,7 @@
 Summary:	ADT Plugin for Eclipse
 Name:		eclipse-adt
 Version:	10.0.0
-Release:	1
+Release:	2
 License:	EPL v1.0
 Group:		Libraries/Java
 Obsoletes:	eclipse-plugin-adt
@@ -15,14 +15,14 @@ BuildRequires:	jpackage-utils
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
 BuildRequires:	unzip
-Requires:	eclipse >= 3.3
+Requires:	eclipse >= 3.6
 Requires:	eclipse-gef
 Requires:	eclipse-jdt
 Requires:	eclipse-plugin-webtools
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		eclipsedir	%{_datadir}/eclipse
+%define		eclipsedir	%{_libdir}/eclipse/dropins/adt
 
 %description
 Android Development Tools (ADT) is a plugin for the Eclipse IDE that
@@ -41,6 +41,7 @@ done
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{eclipsedir}/{features,plugins}
+
 cp -a features/* $RPM_BUILD_ROOT%{eclipsedir}/features
 cp -a plugins/* $RPM_BUILD_ROOT%{eclipsedir}/plugins
 
