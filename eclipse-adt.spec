@@ -4,7 +4,7 @@
 Summary:	ADT Plugin for Eclipse
 Name:		eclipse-adt
 Version:	10.0.0
-Release:	2
+Release:	3
 License:	EPL v1.0
 Group:		Libraries/Java
 Obsoletes:	eclipse-plugin-adt
@@ -50,5 +50,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%dir %{eclipsedir}
+%dir %{eclipsedir}/features
+%dir %{eclipsedir}/plugins
 %{eclipsedir}/features/com.android.ide.eclipse.*
 %{eclipsedir}/plugins/com.android.ide.eclipse.*
