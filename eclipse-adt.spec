@@ -3,19 +3,19 @@
 %include	/usr/lib/rpm/macros.java
 Summary:	ADT Plugin for Eclipse
 Name:		eclipse-adt
-Version:	17.0.0
+Version:	22.0.5
 Release:	1
 License:	EPL v1.0
 Group:		Libraries/Java
 Obsoletes:	eclipse-plugin-adt
 Source0:	http://dl.google.com/android/ADT-%{version}.zip
-# Source0-md5:	ecb12c07e534997cd32c66d57f21b770
+# Source0-md5:	1097fccf32063e3638a9d27aa0f295ca
 URL:		http://developer.android.com/sdk/eclipse-adt.html
 BuildRequires:	jpackage-utils
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
 BuildRequires:	unzip
-Requires:	eclipse >= 3.6
+Requires:	eclipse >= 3.6.2
 Requires:	eclipse-gef
 Requires:	eclipse-jdt
 Requires:	eclipse-plugin-webtools
