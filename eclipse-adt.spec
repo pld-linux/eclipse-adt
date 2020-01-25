@@ -1,6 +1,5 @@
 # TODO
 # - how to (where to?) package web and xml and index.html
-%include	/usr/lib/rpm/macros.java
 Summary:	ADT Plugin for Eclipse
 Name:		eclipse-adt
 Version:	22.0.5
